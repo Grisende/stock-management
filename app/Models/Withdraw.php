@@ -16,8 +16,8 @@ class Withdraw extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name',
-        'sku',
-        'insertion_date'
+        'product_id',
+        'is_api',
+        'withdraw_date'
     ];
 }
