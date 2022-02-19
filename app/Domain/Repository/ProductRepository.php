@@ -2,10 +2,10 @@
 
 namespace App\Domain\Repository;
 
-use App\Domain\Repository\Contracts\ProductBaseRepositoryInterface;
+use App\Domain\Repository\Contracts\ProductRepositoryInterface;
 use App\Models\Product;
 
-class ProductRepository implements ProductBaseRepositoryInterface
+class ProductRepository implements ProductRepositoryInterface
 {
 
     public function getAll() : array
