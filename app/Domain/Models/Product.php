@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Domain\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,5 +20,10 @@ class Product extends Model
         'sku',
         'insertion_date'
     ];
+
+    public function withdraws()
+    {
+        return $this->belongsToMany(Withdraw::class, 'withdraws', 'product_id', 'id');
+    }
 
 }

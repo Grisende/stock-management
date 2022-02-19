@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Domain\Service\ProductService;
-use App\Http\Requests\WithdrawRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -18,22 +17,22 @@ class ProductController extends Controller
 
     public function list()
     {
-        $products = $this->service->getAll();
+        return $this->service->getAll();
     }
 
     public function getById(int $id)
     {
-        $product = $this->service->getById($id);
+        return $this->service->getById($id);
     }
 
-    public function create(WithdrawRequest $request)
+    public function create(ProductRequest $request)
     {
-        $this->service->create($request);
+        $this->service->create($request->all());
     }
 
-    public function update(WithdrawRequest $request, int $id)
+    public function update(ProductRequest $request, int $id)
     {
-        $this->update($request->all(), $id);
+        $this->update($request, $id);
     }
 
     public function delete(int $id)

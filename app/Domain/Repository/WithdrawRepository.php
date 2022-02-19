@@ -2,20 +2,20 @@
 
 namespace App\Domain\Repository;
 
+use App\Domain\Models\Withdraw;
 use App\Domain\Repository\Contracts\WithdrawRepositoryInterface;
-use App\Models\Withdraw;
 
 class WithdrawRepository implements WithdrawRepositoryInterface
 {
 
     public function getAll() : array
     {
-        return Withdraw::all();
+        return Withdraw::all()->toArray();
     }
 
     public function getById(int $id) : array
     {
-        return Withdraw::findOrFail($id);
+        return Withdraw::findOrFail($id)->toArray();
     }
 
     public function create(array $attributes) : void

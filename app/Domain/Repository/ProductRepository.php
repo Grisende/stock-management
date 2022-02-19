@@ -2,20 +2,20 @@
 
 namespace App\Domain\Repository;
 
+use App\Domain\Models\Product;
 use App\Domain\Repository\Contracts\ProductRepositoryInterface;
-use App\Models\Product;
 
 class ProductRepository implements ProductRepositoryInterface
 {
 
     public function getAll() : array
     {
-        return Product::all();
+        return Product::all()->toArray();
     }
 
     public function getById(int $id) : array
     {
-        return Product::findOrFail($id);
+        return Product::findOrFail($id)->toArray();
     }
 
     public function create(array $attributes) : void
