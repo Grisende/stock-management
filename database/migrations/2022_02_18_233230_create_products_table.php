@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('sku')->unique();
+            $table->boolean('is_api');
             $table->date('insertion_date');
         });
     }
