@@ -16,6 +16,7 @@ class Product extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'id',
         'name',
         'sku',
         'insertion_date'

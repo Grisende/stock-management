@@ -16,6 +16,8 @@
                 <tr class="text-center">
                     <th scope="col">Código do Produto</th>
                     <th scope="col">Nome do Produto</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Data de Inserção</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -23,10 +25,12 @@
                 <tbody>
                 @foreach ($products as $product)
                     <tr class="text-center">
-                        <td>{{$product['product_id']}}</td>
+                        <td>{{$product['id']}}</td>
                         <td>{{$product['name']}}</td>
-                        <td><a href="{{url('products', $product['product_id'])}}"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="{{url('products', $product['product_id'])}}" class="js-del-products"><i class="fas fa-trash"></i></a></td>
+                        <td>{{$product['sku']}}</td>
+                        <td>{{$product['insertion_date']}}</td>
+                        <td><a href="{{url('products', $product['id'])}}"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="{{url('products', $product['id'])}}" class="js-del-products"><i class="fas fa-trash"></i></a></td>
                     </tr>
                 @endforeach
                 </tbody>

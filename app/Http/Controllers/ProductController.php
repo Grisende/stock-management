@@ -15,24 +15,37 @@ class ProductController extends Controller
         $this->service = $service;
     }
 
+    public function form()
+    {
+        return view('product.form');
+    }
+
     public function list()
     {
-        return $this->service->getAll();
+        $products = $this->service->getAll();
+
+        return view('product.list', compact('products'));
     }
 
     public function getById(int $id)
     {
-        return $this->service->getById($id);
+        $product = $this->service->getById($id);
+
+        return view('product.form', compact('product'));
     }
 
     public function create(ProductRequest $request)
     {
         $this->service->create($request->all());
+
+        return $this->list();
     }
 
     public function update(ProductRequest $request, int $id)
     {
-        $this->update($request, $id);
+        $this->service->update($request->all(), $id);
+
+        return $this->list();
     }
 
     public function delete(int $id)
