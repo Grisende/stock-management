@@ -17,16 +17,16 @@ class WithdrawController extends Controller
 
     public function list()
     {
-        $products = $this->service->getAll();
+        $withdraws = $this->service->getAll();
 
-        return $products;
+        return view('withdraw.list', compact('withdraws'));
     }
 
     public function getById(int $id)
     {
-        $product = $this->service->getById($id);
+        $withdraw = $this->service->getById($id);
 
-        return $product;
+        return view('withdraw.form', compact('withdraw'));
     }
 
     public function create(WithdrawRequest $request)

@@ -16,8 +16,8 @@
                     <div class="mt-3">
                         <label for="title">Product</label>
                         <select class="form-control" id="product_id" name="product_id" required>
-                            @foreach($withdraws as $withdraw)
-                                <option value="{{$withdraw['product_id']}}">{{$withdraw['name']}}</option>
+                            @foreach($products as $product)
+                                <option value="{{$product['id']}}">{{$product['name']}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="form-group text-center mt-5">
-                    <a href="{{ url('products/') }}" class="btn btn-primary">Cancelar</a>
+                    <a href="{{ url('withdraws/') }}" class="btn btn-primary">Cancelar</a>
                     <button class="btn btn-primary ml-3"> Salvar</button>
                 </div>
             </form>

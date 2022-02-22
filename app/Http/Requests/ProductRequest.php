@@ -24,8 +24,8 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'sku' => 'required'
+            'name'   => 'required',
+            'sku'    => 'required|unique:products|max:255',
         ];
     }
 
@@ -34,7 +34,7 @@ class ProductRequest extends FormRequest
         return [
             'name.required'  => 'Este campo não pode ser deixado em branco',
             'sku.required'   => 'Este campo não pode ser deixado em branco',
-            'sku.unique'     => 'Não pode ser um código duplicado'
+            'sku.unique'     => 'Não é possível inserir códigos duplicados'
         ];
     }
 }

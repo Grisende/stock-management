@@ -14,7 +14,7 @@
         <div>
             <header class="w-100 bg-primary text-center">
                 <div class="logo w-100">
-                    <a href="{{url('/')}}"><img src="{{asset('assets/img/logo.png')}}" alt="logo"></a>
+                    <a href="{{url('/home')}}"><img src="{{asset('assets/img/logo.png')}}" alt="logo"></a>
                 </div>
             </header>
 

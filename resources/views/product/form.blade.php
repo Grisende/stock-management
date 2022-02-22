@@ -10,7 +10,7 @@
                 <form class="inline-form p-5" method="post" action="{{ url('products', $product['id']) }}">
                 @method('put')
             @else
-                <form class="inline-form p-5" method="post" action="{{ url('products/') }}">
+                <form class="inline-form p-5" method="post" action="{{ url('products', 1) }}">
             @endif
                 @csrf
                     <div class="mt-3">

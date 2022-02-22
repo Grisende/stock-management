@@ -8,7 +8,7 @@
         <div>
             <div class="add-purchase mb-3">
                 <a href="{{url('/home')}}" class="btn btn-primary"><i class="fas fa-arrow-left"> Voltar</i></a>
-                <a href="{{url('products/form')}}" class="btn btn-primary"><i class="fas fa-plus"> Novo</i></a>
+                <a href="{{url('withdraw.form')}}" class="btn btn-primary"><i class="fas fa-plus"> Novo</i></a>
             </div>
             <table class="table table-responsive table-bordered table-border-primary">
                 @csrf
@@ -24,11 +24,11 @@
                 <tbody>
                 @foreach ($withdraws as $withdraw)
                     <tr class="text-center">
-                        <td>{{$withdraw['id']}}</td>
-                        <td>{{$withdraw['name']}}</td>
-                        <td>{{$withdraw['sku']}}</td>
-                        <td>{{$withdraw['insertion_date']}}</td>
-                        <td><a href="{{url('products', $withdraw['id'])}}"><i class="fas fa-edit"></i></a></td>
+                        <td>{{ $withdraw['id'] }}</td>
+                        <td>{{ $withdraw['name'] }}</td>
+                        <td>{{ $withdraw['sku'] }}</td>
+                        <td>{{ $withdraw['insertion_date'] }}</td>
+                        <td><a href="{{ url('products', $withdraw['id']) }}"><i class="fas fa-edit"></i></a></td>
                     </tr>
                 @endforeach
                 </tbody>

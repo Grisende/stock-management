@@ -4,6 +4,7 @@ namespace App\Domain\Repository;
 
 use App\Domain\Models\Product;
 use App\Domain\Repository\Contracts\ProductRepositoryInterface;
+use Illuminate\Support\Facades\DB;
 
 class ProductRepository implements ProductRepositoryInterface
 {
@@ -20,7 +21,7 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function create(array $attributes) : void
     {
-        Product::create($attributes);
+        DB::table('products')->insert($attributes);
     }
 
     public function update(array $attributes, int $id) : void

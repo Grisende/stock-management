@@ -27,9 +27,9 @@
                 <div class="card bg-primary disabled">
                     <h5 class="text-center mt-2" style="color: #FFFFFF"><i class="fas fa-tags"> Baixa de Produtos</i></h5>
                     <div class="card-body text-center">
-                        <a href="{{url('tags/form')}}" class="btn btn-primary"><i class="fas fa-plus"> Adicionar</i></a>
-                        <a href="{{url('tags/')}}" class="btn btn-primary"><i class="fas fa-list"> Listar</i></a>
-                        <a href="{{url('product-tags/report')}}" class="btn btn-primary"><i class="fas fa-file"> Relatório de Relevância</i></a>
+                        <a href="{{url('')}}" class="btn btn-primary"><i class="fas fa-plus"> Adicionar</i></a>
+                        <a href="{{url('withdraws/')}}" class="btn btn-primary"><i class="fas fa-list"> Listar</i></a>
+                        <a href="{{url('')}}" class="btn btn-primary"><i class="fas fa-file"> Relatório de Relevância</i></a>
                     </div>
                 </div>
             </div>
