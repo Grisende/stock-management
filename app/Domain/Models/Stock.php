@@ -5,11 +5,11 @@ namespace App\Domain\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Withdraw extends Model
+class Stock extends Model
 {
     use HasFactory;
 
-    public $table = 'withdraws';
+    public $table = 'stocks';
 
     public $timestamps = false;
 
@@ -17,9 +17,8 @@ class Withdraw extends Model
 
     protected $fillable = [
         'product_id',
+        'withdraw_id',
         'quantity',
-        'is_api',
-        'withdraw_date'
     ];
 
     public function products()
@@ -27,8 +26,8 @@ class Withdraw extends Model
         return $this->hasMany(Product::class, 'product_id', 'id');
     }
 
-    public function stocks()
+    public function withdraws()
     {
-        return $this->belongsToMany(Stock::class, 'stocks', 'withdraw_id', 'id');
+        return $this->hasMany(Withdraw::class, 'withdraw_id', 'id');
     }
 }

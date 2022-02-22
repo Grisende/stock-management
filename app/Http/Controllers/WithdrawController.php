@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Service\ProductService;
 use App\Domain\Service\WithdrawService;
 use App\Http\Requests\WithdrawRequest;
 
@@ -10,9 +11,18 @@ class WithdrawController extends Controller
 
     private $service;
 
-    public function __construct(WithdrawService $service)
+    private $productService;
+
+    public function __construct(WithdrawService $service, ProductService $productService)
     {
-        $this->service = $service;
+        $this->service        = $service;
+        $this->productService = $productService;
+    }
+
+    public function form()
+    {
+        $products = $this->productService->getAll();
+        return view('withdraw.form', compact('products'));
     }
 
     public function list()
@@ -24,18 +34,30 @@ class WithdrawController extends Controller
 
     public function getById(int $id)
     {
+        $products = $this->productService->getAll();
         $withdraw = $this->service->getById($id);
 
-        return view('withdraw.form', compact('withdraw'));
+        return view('withdraw.form', compact('withdraw', 'products'));
     }
 
-    public function create(WithdrawRequest $request)
+    public function create(WithdrawRequest $request, int $isApi)
     {
-        $this->service->create($request->all());
+        $attributes = [
+            'product_id'     => $request['product_id'],
+            'quantity'       => $request['quantity'],
+            'withdraw_date'  => $request['withdraw_date'],
+            'is_api'         => $isApi
+        ];
+
+        $this->service->create($attributes);
+
+        return $this->list();
     }
 
     public function update(WithdrawRequest $request, int $id)
     {
-        $this->update($request, $id);
+        $this->service->update($request->all(), $id);
+
+        return $this->list();
     }
 }

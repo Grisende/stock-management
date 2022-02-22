@@ -3,14 +3,18 @@
 namespace App\Domain\Service;
 
 use App\Domain\Repository\Contracts\ProductRepositoryInterface;
+use App\Domain\Repository\StockRepository;
 
 class ProductService
 {
     private $repository;
 
-    public function __construct(ProductRepositoryInterface $repository)
+    private $stockRepository;
+
+    public function __construct(ProductRepositoryInterface $repository, StockRepository $stockRepository)
     {
         $this->repository = $repository;
+        $this->stockRepository = $stockRepository;
     }
 
     public function getAll() : array
@@ -29,6 +33,7 @@ class ProductService
     }
 
     public function update(array $attributes, int $id) : void
+
     {
         $this->repository->update($attributes, $id);
     }
@@ -37,4 +42,5 @@ class ProductService
     {
         $this->repository->delete($id);
     }
+
 }

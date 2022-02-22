@@ -18,6 +18,7 @@ class Product extends Model
     protected $fillable = [
         'id',
         'name',
+        'quantity',
         'sku',
         'insertion_date'
     ];
@@ -25,6 +26,11 @@ class Product extends Model
     public function withdraws()
     {
         return $this->belongsToMany(Withdraw::class, 'withdraws', 'product_id', 'id');
+    }
+
+    public function stocks()
+    {
+        return $this->belongsToMany(Stock::class, 'stocks', 'product_id', 'id');
     }
 
 }

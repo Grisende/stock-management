@@ -16,6 +16,7 @@
                 <tr class="text-center">
                     <th scope="col">Código do Produto</th>
                     <th scope="col">Nome do Produto</th>
+                    <th scope="col">Quantidade</th>
                     <th scope="col">SKU</th>
                     <th scope="col">Data de Inserção</th>
                     <th scope="col">Método de Inserção</th>
@@ -28,6 +29,7 @@
                     <tr class="text-center">
                         <td>{{ $product['id'] }}</td>
                         <td>{{ $product['name'] }}</td>
+                        <td>{{ $product['quantity'] }}</td>
                         <td>{{ $product['sku'] }}</td>
                         <td>{{ $product['insertion_date'] }}</td>
                         <td>{{ $product['is_api'] == 0 ? 'API' : 'Sistema' }}</td>

@@ -13,14 +13,20 @@
                 <form class="inline-form p-5" method="post" action="{{ url('products', 1) }}">
             @endif
                 @csrf
-                    <div class="mt-3">
-                        <label for="title">Nome</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $product['name'] ?? '' }}" required>
+                    <div class="row g-2 align-items-center mt-3">
+                        <div class="col-7">
+                            <label for="title">Nome</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $product['name'] ?? '' }}" required>
+                        </div>
+                        <div class="col-5">
+                            <label for="title">Quantidade</label>
+                            <input type="text" class="form-control" id="quantity" name="quantity" value="{{ $product['quantity'] ?? '' }}" required>
+                        </div>
                     </div>
                     <div class="row g-2 align-items-center mt-3">
                         <div class="col-7">
                             <label for="title">SKU</label>
-                            <input type="text" class="form-control" id="sku" name="sku" value="{{ $product['sku'] ?? '' }}" required>
+                            <input type="text" class="form-control" id="sku" name="sku" value="{{ $product['sku'] ?? '' }}" @if(isset($product)) disabled @endif required>
                         </div>
 
                         <div class="col-5">

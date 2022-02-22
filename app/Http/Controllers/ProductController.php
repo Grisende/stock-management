@@ -48,6 +48,7 @@ class ProductController extends Controller
 
         $attributes = [
             'name'           => $request['name'],
+            'quantity'       => $request['quantity'],
             'sku'            => $request['sku'],
             'insertion_date' => $request['insertion_date'],
             'is_api'         => $isApi
@@ -58,7 +59,7 @@ class ProductController extends Controller
         return $this->list();
     }
 
-    public function update(ProductRequest $request, int $id)
+    public function update(Request $request, int $id)
     {
         $this->service->update($request->all(), $id);
 

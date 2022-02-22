@@ -24,8 +24,8 @@ class WithdrawRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id'                => 'required',
-            'is_api'                    => 'boolean',
+            'product_id' => 'required',
+            'quantity'   => 'required|integer'
         ];
     }
 
@@ -33,7 +33,6 @@ class WithdrawRequest extends FormRequest
     {
         return [
             'product_id.required' => 'Este campo não pode ser deixado em branco',
-            'is_api'              => 'Esse valor deve ser booleano'
         ];
     }
 }

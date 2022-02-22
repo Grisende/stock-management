@@ -20,6 +20,7 @@
                     <div class="card-body text-center">
                         <a href="{{ url('products/form') }}" class="btn btn-primary"><i class="fas fa-plus"> Adicionar</i></a>
                         <a href="{{ url('products/') }}" class="btn btn-primary"><i class="fas fa-list"> Listar</i></a>
+                        <a href="{{url('stock/stock-report')}}" class="btn btn-primary"><i class="fas fa-file"> Estoque </i></a>
                     </div>
                 </div>
             </div>
@@ -27,9 +28,8 @@
                 <div class="card bg-primary disabled">
                     <h5 class="text-center mt-2" style="color: #FFFFFF"><i class="fas fa-tags"> Baixa de Produtos</i></h5>
                     <div class="card-body text-center">
-                        <a href="{{url('')}}" class="btn btn-primary"><i class="fas fa-plus"> Adicionar</i></a>
+                        <a href="{{url('withdraws/form')}}" class="btn btn-primary"><i class="fas fa-plus"> Adicionar</i></a>
                         <a href="{{url('withdraws/')}}" class="btn btn-primary"><i class="fas fa-list"> Listar</i></a>
-                        <a href="{{url('')}}" class="btn btn-primary"><i class="fas fa-file"> Relatório de Relevância</i></a>
                     </div>
                 </div>
             </div>
