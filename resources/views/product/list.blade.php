@@ -7,7 +7,7 @@
     <div class="products" style="padding: 10em 10em 10em; margin-top: -8em">
         <div>
             <div class="add-purchase mb-3">
-                <a href="{{url('/')}}" class="btn btn-primary"><i class="fas fa-arrow-left"> Voltar</i></a>
+                <a href="{{url('/home')}}" class="btn btn-primary"><i class="fas fa-arrow-left"> Voltar</i></a>
                 <a href="{{url('products/form')}}" class="btn btn-primary"><i class="fas fa-plus"> Novo</i></a>
             </div>
             <table class="table table-responsive table-bordered table-border-primary">

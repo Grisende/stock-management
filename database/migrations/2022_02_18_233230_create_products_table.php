@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('sku')->unique();
+            $table->string('sku')->unique();
             $table->boolean('is_api')->default(1);
             $table->date('insertion_date');
         });

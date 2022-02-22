@@ -7,7 +7,7 @@
     <div class="products" style="padding: 10em 10em 10em; margin-top: -8em">
         <div>
             <div class="add-purchase mb-3">
-                <a href="{{url('/')}}" class="btn btn-primary"><i class="fas fa-arrow-left"> Voltar</i></a>
+                <a href="{{url('/home')}}" class="btn btn-primary"><i class="fas fa-arrow-left"> Voltar</i></a>
                 <a href="{{url('products/form')}}" class="btn btn-primary"><i class="fas fa-plus"> Novo</i></a>
             </div>
             <table class="table table-responsive table-bordered table-border-primary">
@@ -22,13 +22,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($products as $product)
+                @foreach ($withdraws as $withdraw)
                     <tr class="text-center">
-                        <td>{{$product['id']}}</td>
-                        <td>{{$product['name']}}</td>
-                        <td>{{$product['sku']}}</td>
-                        <td>{{$product['insertion_date']}}</td>
-                        <td><a href="{{url('products', $product['id'])}}"><i class="fas fa-edit"></i></a></td>
+                        <td>{{$withdraw['id']}}</td>
+                        <td>{{$withdraw['name']}}</td>
+                        <td>{{$withdraw['sku']}}</td>
+                        <td>{{$withdraw['insertion_date']}}</td>
+                        <td><a href="{{url('products', $withdraw['id'])}}"><i class="fas fa-edit"></i></a></td>
                     </tr>
                 @endforeach
                 </tbody>

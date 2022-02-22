@@ -14,11 +14,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
+
+    Route::prefix('products')->group(function (){
+        Route::get('/form', [\App\Http\Controllers\ProductController::class, 'form']);
+        Route::get('/', [\App\Http\Controllers\ProductController::class, 'list']);
+        Route::get('/{id}', [\App\Http\Controllers\ProductController::class, 'getById']);
+        Route::post('/', [\App\Http\Controllers\ProductController::class, 'create']);
+        Route::put('/{id}', [\App\Http\Controllers\ProductController::class, 'update']);
+        Route::delete('/{id}', [\App\Http\Controllers\ProductController::class, 'delete']);
+    });
+
+    Route::prefix('withdraws')->group(function (){
+        Route::get('/', [\App\Http\Controllers\WithdrawController::class, 'list']);
+        Route::get('/{id}', [\App\Http\Controllers\WithdrawController::class, 'getById']);
+        Route::post('/', [\App\Http\Controllers\WithdrawController::class, 'create']);
+        Route::put('/', [\App\Http\Controllers\WithdrawController::class, 'update']);
+    });
+});
+
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth'])->name('home');
+
+
 
 require __DIR__.'/auth.php';

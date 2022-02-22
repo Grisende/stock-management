@@ -12,8 +12,10 @@
 
     <body>
         <div>
-            <header class="text-center w-100 bg-primary">
-                <a href="{{url('/')}}"><img src="{{asset('assets/img/logo.png')}}" alt="logo"></a>
+            <header class="w-100 bg-primary text-center">
+                <div class="logo w-100">
+                    <a href="{{url('/')}}"><img src="{{asset('assets/img/logo.png')}}" alt="logo"></a>
+                </div>
             </header>
 
             <main>
@@ -22,6 +24,5 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="{{url('assets/js/delete/product.js')}}"></script>
-        <script src="{{url('assets/js/delete/tag.js')}}"></script>
     </body>
 </html>

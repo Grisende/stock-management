@@ -6,7 +6,7 @@
 
     <div class="form">
         <div class="mt-5 p-5 w-50 mx-auto border">
-            @if(isset($withdraw))
+            @if(isset($withdraws))
                 <form class="inline-form p-5" method="post" action="{{url('withdraw', $withdraw['id'])}}">
                 @method('PUT')
             @else
@@ -16,8 +16,8 @@
                     <div class="mt-3">
                         <label for="title">Product</label>
                         <select class="form-control" id="product_id" name="product_id" required>
-                            @foreach($withdraws as $product)
-                                <option value="{{with['product_id']}}">{{$product['name']}}</option>
+                            @foreach($withdraws as $withdraw)
+                                <option value="{{$withdraw['product_id']}}">{{$withdraw['name']}}</option>
                             @endforeach
                         </select>
                     </div>
